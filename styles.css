@@ -434,88 +434,296 @@ a {
     opacity: 1;
 }
 
-/* Meet The Team */
-.team-section {
-    background-color: var(--bg-light);
-}
-
-.team-banner {
-    background-color: #3c2827;
+/* Meet The Founder */
+.founder-section {
+    background-color: #3c2827; /* Same as the old banner background */
+    padding: 100px 20px;
     color: var(--white);
-    padding: 40px 20px;
-    text-align: center;
     border-top: 2px solid var(--accent);
     border-bottom: 2px solid var(--accent);
 }
 
-.team-banner h2 {
-    font-size: 2.2rem;
-    font-weight: 400;
+.founder-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.founder-image-wrapper {
+    flex: 1;
+    position: relative;
+    max-width: 450px;
+}
+
+.founder-image-bg {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #E8F0FE; /* The light blue background behind the image */
+    border-radius: 24px;
+    z-index: 1;
+}
+
+.founder-image-wrapper img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.certified-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: white;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.cert-icon {
+    background: #E8F0FE;
+    color: #4285F4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.cert-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-text strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.cert-text span {
+    font-size: 0.7rem;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.founder-content {
+    flex: 1;
+}
+
+.founder-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #82B1FF;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(130, 177, 255, 0.3);
+}
+
+.founder-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+}
+
+.founder-subtitle {
+    color: #57A3F8;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.founder-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #DED3D0;
+}
+
+.founder-content p strong {
+    color: var(--white);
+}
+
+.founder-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    border-left: 3px solid #57A3F8;
+    padding-left: 20px;
+    margin: 30px 0;
+    color: var(--white);
+}
+
+.expert-care {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.expert-care .line {
+    width: 40px;
+    height: 2px;
+    background-color: #57A3F8;
+}
+
+.expert-care .text {
+    font-size: 0.85rem;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    color: #DED3D0;
+    font-weight: 600;
 }
 
-.team-banner p {
-    font-size: 1rem;
-    letter-spacing: 4px;
-    color: var(--accent);
-    margin-top: 10px;
+/* Our Team */
+.our-team-section {
+    background-color: var(--bg-light);
 }
 
-.team-container {
+.mb-large {
+    margin-bottom: 50px !important;
+}
+
+.team-cards-container {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    padding: 80px 20px;
+    gap: 40px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.team-member {
+.team-card {
     position: relative;
     width: 100%;
-    max-width: 380px;
-    border-radius: 12px;
+    max-width: 340px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    transition: transform 0.3s;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.team-member:hover {
-    transform: translateY(-10px);
+.team-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.team-member img {
+.team-card img {
     width: 100%;
-    height: 500px;
+    height: 480px;
     object-fit: cover;
     display: block;
 }
 
-.member-info {
+.team-card-info {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(122, 99, 92, 1) 20%, rgba(122, 99, 92, 0.8) 60%, transparent);
-    padding: 40px 20px 20px 20px;
+    background: linear-gradient(to top, rgba(82, 55, 48, 0.95) 10%, rgba(82, 55, 48, 0.8) 50%, transparent);
+    padding: 60px 20px 25px 20px;
     text-align: center;
     color: var(--white);
 }
 
-.member-info h3 {
+.team-card-info h3 {
     font-size: 1.8rem;
     color: var(--white);
+    font-family: 'Playfair Display', serif;
     text-transform: uppercase;
     line-height: 1.1;
     margin-bottom: 8px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
 }
 
-.member-info p {
-    color: var(--accent);
-    font-weight: 600;
-    letter-spacing: 1.5px;
+.team-card-info p {
+    color: #E2934D;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Customer Reviews */
+.reviews-section {
+    background-color: #3c2827;
+    color: var(--white);
+    border-top: 2px solid var(--accent);
+}
+
+.reviews-section .section-title {
+    color: var(--accent-light);
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.review-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 35px 25px;
+    max-width: 350px;
+    text-align: left;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.review-card .stars {
+    color: #FACC15;
+    margin-bottom: 20px;
     font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.review-card .review-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #E0E0E0;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.review-card .reviewer-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent-light);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
 }
 
 /* Footer */
@@ -669,12 +877,14 @@ a {
     .shot-title {
         font-size: 5rem;
     }
-    .team-container {
+    .founder-container {
         flex-direction: column;
-        align-items: center;
     }
-    .team-member img {
-        height: 400px;
+    .founder-image-wrapper {
+        margin-bottom: 40px;
+    }
+    .founder-title {
+        font-size: 2.5rem;
     }
 }
 
