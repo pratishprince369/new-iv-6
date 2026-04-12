@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -317,6 +319,59 @@
                     item.classList.add('active');
                 }
             });
+        });
+    </script>
+    
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Dynamically apply scroll animations (parallax effect) to elements
+        document.querySelectorAll('.hero-content').forEach(el => el.setAttribute('data-aos', 'zoom-in'));
+        document.querySelectorAll('.banner-gold h2').forEach(el => el.setAttribute('data-aos', 'fade-down'));
+        document.querySelectorAll('.section-title').forEach(el => el.setAttribute('data-aos', 'fade-up'));
+        document.querySelectorAll('.section-desc').forEach(el => el.setAttribute('data-aos', 'fade-up'));
+        
+        document.querySelectorAll('.iv-bag-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100).toString());
+        });
+        
+        document.querySelectorAll('.service-icon').forEach((el, index) => {
+            el.setAttribute('data-aos', 'zoom-in');
+            el.setAttribute('data-aos-delay', (index * 100).toString());
+        });
+        
+        document.querySelectorAll('.shot-bar-subtitle').forEach(el => el.setAttribute('data-aos', 'fade-down'));
+        document.querySelectorAll('.shot-title').forEach(el => el.setAttribute('data-aos', 'fade-right'));
+        document.querySelectorAll('.shot-info').forEach(el => el.setAttribute('data-aos', 'fade-left'));
+        document.querySelectorAll('.list-grid ul li').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-left');
+            el.setAttribute('data-aos-delay', (index * 50).toString());
+        });
+        
+        document.querySelectorAll('.acc-item').forEach((el, index) => {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', (index * 100).toString());
+        });
+        
+        document.querySelectorAll('.founder-image-wrapper').forEach(el => el.setAttribute('data-aos', 'fade-right'));
+        document.querySelectorAll('.founder-content').forEach(el => el.setAttribute('data-aos', 'fade-left'));
+        
+        document.querySelectorAll('.team-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'flip-left');
+            el.setAttribute('data-aos-delay', (index * 150).toString());
+        });
+        
+        document.querySelectorAll('.review-card').forEach((el, index) => {
+            el.setAttribute('data-aos', 'zoom-in-up');
+            el.setAttribute('data-aos-delay', (index * 150).toString());
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true, /* whether animation should happen only once - while scrolling down */
+            offset: 100, /* offset (in px) from the original trigger point */
         });
     </script>
 </body>
