@@ -1017,6 +1017,122 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+/* Treatment Goals Section */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+.goal-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px 15px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+    border-color: #186082;
+}
+.goal-card:hover .goal-icon {
+    transform: scale(1.1);
+}
+.goal-icon {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    /* CSS Hack to make solid FontAwesome icons look like thin outline icons */
+    color: transparent;
+    -webkit-text-stroke: 1.5px #125470;
+}
+.goal-card:hover .goal-icon {
+    transform: scale(1.1);
+    color: #125470; /* Fills in the icon playfully on hover */
+    -webkit-text-stroke: 0px;
+}
+.goal-title {
+    font-family: 'Inter', sans-serif;
+    color: #125470;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    min-height: 40px; 
+}
+.goal-desc {
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+.goal-arrow {
+    color: #186082;
+    font-size: 1.4rem;
+}
+
+/* Carousel Section */
+.carousel-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0 40px 0;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+.carousel-card {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    color: var(--primary);
+    transition: all 0.3s;
+}
+.carousel-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+.carousel-btn.left { left: -10px; }
+.carousel-btn.right { right: -10px; }
+
 .blog-card img {
     width: 100%;
     height: 250px;
@@ -1048,6 +1164,167 @@ a {
     color: #64748b;
     margin-bottom: 25px;
 }
+
+/* Seamless Wellness Section */
+.seamless-wellness {
+    background-color: #e8f3f3;
+}
+.seamless-grid {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    justify-content: space-between;
+}
+.seamless-content {
+    flex: 1;
+    max-width: 500px;
+}
+.seamless-image {
+    flex: 1;
+    text-align: right;
+}
+.seamless-image img {
+    max-width: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.seamless-steps {
+    margin: 40px 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 30px;
+}
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.step-circle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    background-color: #B0BEC5; /* Muted color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.step-item h3 {
+    font-size: 1.6rem;
+    color: #90A4AE;
+    font-weight: 600;
+    margin-top: 4px;
+    transition: all 0.3s ease;
+}
+.step-item .step-desc {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+.step-item.active {
+    margin-bottom: 25px;
+}
+.step-item.active .step-circle {
+    background-color: var(--accent); /* Teal color */
+}
+.step-item.active h3 {
+    color: var(--primary);
+}
+.step-item.active .step-desc {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+/* Revive Difference Section */
+.difference-grid {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+.diff-image-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.diff-circle-wrapper {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.diff-circle-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.diff-content-col {
+    flex: 1;
+}
+.diff-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.diff-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.diff-icon {
+    width: 45px; 
+    color: #186082;
+    font-size: 1.8rem;
+    padding-top: 2px;
+}
+.diff-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    color: #186082;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+.diff-text p {
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+.btn-orange {
+    display: block;
+    background-color: #F26E4A;
+    color: var(--white);
+    padding: 12px 0;
+    width: 320px;
+    text-align: center;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: all 0.3s;
+    text-decoration: none;
+    margin-left: 60px;
+}
+.btn-orange:hover {
+    background-color: #D65A38;
+    color: var(--white);
+}
+
 .insta-image img {
     width: 100%;
     max-width: 600px;
@@ -1089,8 +1366,43 @@ a {
         flex-direction: column;
         padding: 15px;
     }
+    .seamless-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .seamless-content {
+        max-width: 100%;
+    }
+    .seamless-steps, .step-item {
+        text-align: left;
+    }
+    .difference-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .diff-image-col {
+        justify-content: center;
+    }
+    .diff-circle-wrapper {
+        width: 300px;
+        height: 300px;
+    }
     .product-container.grid-3 {
         grid-template-columns: 1fr;
+    }
+    .carousel-card {
+        flex: 0 0 280px;
+        padding: 20px;
+    }
+    .carousel-wrapper {
+        padding: 0 5px;
+    }
+    .carousel-btn {
+        display: none; /* Let users primarily swipe on phones */
+    }
+    .goals-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     .logo-img {
         height: 50px;
