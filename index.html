@@ -7,7 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -16,21 +16,27 @@
 </head>
 <body>
 
+    <!-- Top Bar -->
+    <div class="top-bar" style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+        <span style="font-size: 0.9rem;">Expert IV Hydration Delivered to You</span>
+        <a href="book.html" style="background-color: white; color: var(--accent); padding: 4px 15px; border-radius: 20px; font-weight: 700; font-size: 0.75rem;">BOOK NOW</a>
+    </div>
+
     <!-- Header / Navbar -->
     <header class="navbar">
         <div class="logo">
             <img src="https://res.cloudinary.com/dpcidympa/image/upload/q_auto/f_auto/v1775173998/Screenshot_2026-04-03_051123-removebg-preview_wa0knu.png" alt="Revive IV Logo" class="logo-img">
         </div>
         <nav class="nav-links">
-            <a href="#">HOME</a>
-            <a href="#">IV DRIPS</a>
-            <a href="#">DRIP SUCCESS FORMULA</a>
-            <a href="#">ABOUT</a>
-            <a href="#">MEMBERSHIPS</a>
-            <a href="#">EVENTS</a>
-            <a href="#">FAQS</a>
-            <a href="#">REVIEWS</a>
-            <a href="#">CONTACT</a>
+            <a href="index.html">HOME</a>
+            <a href="iv-drips.html">IV DRIPS</a>
+            <a href="iv-drips.html">DRIP SUCCESS FORMULA</a>
+            <a href="about.html">ABOUT</a>
+            <a href="memberships.html">MEMBERSHIPS</a>
+            <a href="index.html">EVENTS</a>
+            <a href="index.html">FAQS</a>
+            <a href="index.html">REVIEWS</a>
+            <a href="contact.html">CONTACT</a>
         </nav>
     </header>
 
@@ -45,38 +51,78 @@
         <h2>WHERE WELLNESS MEETS LUXURY</h2>
     </section>
 
-    <!-- Parallax Curvy Water Drip -->
-    <div class="parallax-curvy-container" id="water-effect-container">
-        <svg class="curvy-water-svg" preserveAspectRatio="none" viewBox="0 0 100 100" id="drip-svg">
-            <defs>
-                <!-- Mask drawn via JS to reveal the trail dynamically -->
-                <mask id="water-mask">
-                    <path class="mask-path" id="mask-path" fill="none" stroke="white" stroke-linecap="round" vector-effect="non-scaling-stroke" d="M 5 0 C 15 20, 95 20, 95 35 C 95 50, 5 50, 5 65 C 5 80, 95 80, 95 95 C 95 98, 50 100, 50 100"></path>
-                </mask>
-            </defs>
-            <!-- Faint track background (always visible) -->
-            <path class="curvy-water-tube" id="water-tube-path" vector-effect="non-scaling-stroke" d="M 5 0 C 15 20, 95 20, 95 35 C 95 50, 5 50, 5 65 C 5 80, 95 80, 95 95 C 95 98, 50 100, 50 100"></path>
-            
-            <!-- Group hidden by mask until user scrolls -->
-            <g mask="url(#water-mask)">
-                <!-- Actual colored solid water trail -->
-                <path class="curvy-water-trail" vector-effect="non-scaling-stroke" d="M 5 0 C 15 20, 95 20, 95 35 C 95 50, 5 50, 5 65 C 5 80, 95 80, 95 95 C 95 98, 50 100, 50 100"></path>
-                <!-- Fast flowing high-opacity water dashes to simulate rushing water -->
-                <path class="curvy-water-flow" vector-effect="non-scaling-stroke" d="M 5 0 C 15 20, 95 20, 95 35 C 95 50, 5 50, 5 65 C 5 80, 95 80, 95 95 C 95 98, 50 100, 50 100"></path>
-            </g>
-        </svg>
-        <div class="water-drop-wrapper" id="water-droplet">
-            <div class="water-droplet-3d"></div>
-            <!-- Bubbles inside the core droplet -->
-            <div class="drop-bubbles-container">
-                <div class="bubble b1"></div>
-                <div class="bubble b2"></div>
-                <div class="bubble b3"></div>
-                <div class="bubble b4"></div>
+    <!-- Featured Product Section -->
+    <section class="featured-product section-padding bg-white" data-aos="fade-up">
+        <div class="product-container container">
+            <div class="product-image">
+                <img src="https://res.cloudinary.com/dpcidympa/image/upload/q_auto/f_auto/v1775948553/ivvv-1-removebg-preview_haxd9b.png" alt="All-Inclusive IV">
             </div>
-            <div class="droplet-glow"></div>
+            <div class="product-details">
+                <span class="badge">MOST POPULAR</span>
+                <h2 class="product-title">All-Inclusive</h2>
+                <div class="price"><sup>$</sup>399</div>
+                <p class="product-desc">Optimize wellness with our most comprehensive IV.</p>
+                <ul class="product-features">
+                    <li><i class="fa-regular fa-circle-check"></i> B-Complex Vitamins | Vitamin B12 | Vitamin C | Lipostat (MIC) | Magnesium | Glutathione | Biotin | Zinc</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Rejuvenate & Restore</li>
+                </ul>
+                <a href="book.html" class="btn-dark">BOOK NOW</a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Health Delivered Section -->
+    <section class="health-delivered section-padding" style="background-color: var(--accent-light);" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="section-title" style="font-size: 2.8rem;">The best in health &ndash; <br><strong style="color: var(--primary);">Delivered</strong></h2>
+            <p class="section-desc" style="max-width: 600px;">We offer a comprehensive suite of wellness options—choose from in-home care with our skilled providers or advanced treatments delivered right to your doorstep.</p>
+            
+            <div class="product-card-single mt-4">
+                <img src="https://res.cloudinary.com/dpcidympa/image/upload/q_auto/f_auto/v1775948552/ivvv-2-removebg-preview_y6jzjn.png" alt="NAD+ Injection">
+                <div class="card-content text-center">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--primary);">NAD+ Injection</h3>
+                    <p style="color: #64748b;">Elevate energy and cognitive function.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Health Hub -->
+    <section class="health-hub section-padding bg-white" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="section-title" style="font-size: 2.8rem;">The Drip hydration<br><strong style="color: var(--primary);">health hub</strong></h2>
+            <p class="section-desc" style="max-width: 600px;">Stay informed with our blog—your go-to resource for all things wellness.</p>
+            
+            <div class="blog-card mt-4">
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=80" alt="Exhausted woman">
+                <div class="blog-tags">
+                    <span class="tag">Instant Delivery</span>
+                    <span class="tag">Peptides</span>
+                </div>
+                <h3 class="blog-title">Iron and Fatigue: Why Your "Normal" Iron Levels Might Still Leave You Exhausted</h3>
+                <p class="blog-excerpt">You're tired all the time. Not just at the end of a long day, but in a way that feels...</p>
+                <a href="blog.html" class="btn-dark w-100">READ MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section section-padding" style="background-color: var(--accent-light);" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="section-title" style="font-size: 2.8rem;">Like us, love us,<br><strong style="color: var(--primary);">follow us</strong></h2>
+            <p class="section-desc" style="max-width: 600px;">Your instagram feed just got healthier—follow us for daily inspiration, fun and a community that loves to feel good.</p>
+            
+            <div class="insta-image mt-4">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nurse preparing IV">
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://instagram.com" target="_blank" class="btn-outline-dark"><i class="fa-brands fa-instagram"></i> FOLLOW ON INSTAGRAM</a>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Why IV Hydration -->
     <section class="why-iv section-padding bg-white">
@@ -346,7 +392,7 @@
         <p class="footer-text">Welcome to Revive IV Hydration, we look forward to making your experience with us nothing but top tier excellence.</p>
         <p class="footer-phone"><a href="tel:+18137093698">+1 813-709-3698</a><br><a href="mailto:info@reviveivdrip.io">info@reviveivdrip.io</a><br>Canada, Toronto</p>
         
-        <a href="#" class="btn-book-footer">BOOK NOW!</a>
+        <a href="book.html" class="btn-book-footer">BOOK NOW!</a>
         
         <p class="footer-disclaimer">Privacy Policy • Terms & Conditions • Refund Policy</p>
         <p class="footer-disclaimer mini">These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any diseases.</p>
@@ -431,56 +477,7 @@
             offset: 100,
         });
 
-        // Parallax 3D Curvy Water Drip Logic
-        window.addEventListener('scroll', () => {
-            const container = document.getElementById('water-effect-container');
-            const droplet = document.getElementById('water-droplet');
-            const maskLine = document.getElementById('mask-path');
-            const path = document.getElementById('water-tube-path');
-            
-            const banner = document.querySelector('.banner-gold');
-            if(banner) {
-                container.style.top = (banner.offsetTop + banner.offsetHeight) + 'px';
-            }
 
-            const containerTop = parseInt(container.style.top || 0);
-            
-            // Set dynamic height from banner to footer
-            const footer = document.querySelector('.footer');
-            const contentHeight = document.body.scrollHeight - containerTop - (footer ? footer.offsetHeight : 0);
-            container.style.height = contentHeight + 'px';
-            
-            const scrollY = window.scrollY;
-
-            if (scrollY + window.innerHeight > containerTop) {
-                container.classList.add('visible');
-                
-                // Use the mask line to reveal the underlying water stream
-                const pathLength = path.getTotalLength();
-                maskLine.style.strokeDasharray = pathLength;
-                
-                let progressPixels = (scrollY - containerTop + window.innerHeight * 0.4);
-                let scrollPercentage = progressPixels / contentHeight;
-                scrollPercentage = Math.max(0, Math.min(scrollPercentage, 1));
-                
-                // Set offset matching scroll
-                const offset = pathLength - (scrollPercentage * pathLength);
-                maskLine.style.strokeDashoffset = offset;
-                
-                // Get exact coordinate on stroke curve for the 3D droplet position
-                const point = path.getPointAtLength(scrollPercentage * pathLength);
-                
-                // Convert viewBox 0-100 to exact px overlay values
-                const pxX = (point.x / 100) * window.innerWidth;
-                const pxY = (point.y / 100) * contentHeight;
-
-                droplet.style.transform = `translate(${pxX}px, ${pxY}px)`;
-            } else {
-                container.classList.remove('visible');
-            }
-        });
-        // Trigger initial calculation
-        setTimeout(() => window.dispatchEvent(new Event('scroll')), 500);
     </script>
 </body>
 </html>
