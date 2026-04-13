@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQS | Revive IV Hydration</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar" style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+        <span style="font-size: 0.9rem;">Expert IV Hydration Delivered to You</span>
+        <a href="book.html" style="background-color: white; color: var(--accent); padding: 4px 15px; border-radius: 20px; font-weight: 700; font-size: 0.75rem;">BOOK NOW</a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://res.cloudinary.com/dpcidympa/image/upload/q_auto/f_auto/v1775173998/Screenshot_2026-04-03_051123-removebg-preview_wa0knu.png" alt="Revive IV Logo" class="logo-img"></a>
+        </div>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="iv-drips.html">IV DRIPS</a>
+            <a href="iv-drips.html">DRIP SUCCESS FORMULA</a>
+            <a href="about.html">ABOUT</a>
+            <a href="faqs.html">FAQS</a>
+            <a href="index.html">REVIEWS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <div class="container section-padding text-center" style="max-width: 900px; margin: 0 auto; min-height: 50vh;">
+        <h1 class="product-title" style="margin-top: 40px; margin-bottom: 20px;">Frequently Asked Questions</h1>
+        <p class="section-desc">Got questions about IV hydration? We've got answers. If you can't find what you're looking for, feel free to contact us directly.</p>
+        
+        <div class="accordion" style="text-align: left; margin-top: 40px;">
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleFAQ(this)">
+                    <span>What is IV Hydration Therapy?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="acc-content">
+                    <p>IV hydration therapy is a fast and effective way to deliver necessary vitamins, minerals, and hydration directly into your bloodstream, completely bypassing the digestive system for 100% absorption.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleFAQ(this)">
+                    <span>Does it hurt?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="acc-content">
+                    <p>Most clients feel only a slight pinch during the insertion of the IV. Our highly trained registered nurses are skilled at making the process as quick, painless, and comfortable as possible.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleFAQ(this)">
+                    <span>How long does a session take?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="acc-content">
+                    <p>A typical IV therapy session lasts between 45 to 60 minutes, depending on the specific drip and your body's individual absorption rate. During this time, you can relax, read, or catch up on emails.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleFAQ(this)">
+                    <span>Is this safe?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="acc-content">
+                    <p>Yes! All our treatments are administered by licensed medical professionals using sterile, single-use equipment and FDA-approved, pharmacy-grade ingredients.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleFAQ(this)">
+                    <span>How quickly will I feel the effects?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="acc-content">
+                    <p>Most clients report feeling a boost in energy and overall wellness immediately following their session, with the full benefits noticeable over the next 24 to 48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer mt-4">
+        <div class="footer-logo">
+            <i class="fa-solid fa-droplet"></i>
+            <span>REVIVE IV HYDRATION</span>
+        </div>
+        <p class="copyright">Copyright © 2024 Revive IV Hydration | All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                if(navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const item = element.parentElement;
+            if(item.classList.contains('active')) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
