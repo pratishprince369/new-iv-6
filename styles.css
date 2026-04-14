@@ -1910,7 +1910,42 @@ a {
     color: #cca471;
 }
 
-/* Product Carousel */
+/* Product Carousel with Arrows */
+.carousel-wrapper {
+    position: relative;
+    padding: 0 40px; 
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: var(--primary);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.carousel-btn:hover {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0,147,148,0.3);
+}
+.carousel-btn.left-btn {
+    left: -10px;
+}
+.carousel-btn.right-btn {
+    right: -10px;
+}
+
 .product-carousel {
     display: flex;
     overflow-x: auto;
@@ -1918,41 +1953,42 @@ a {
     gap: 20px;
     padding-bottom: 20px;
     margin-top: 30px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) var(--accent-light);
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
     -webkit-overflow-scrolling: touch;
+    cursor: grab;
 }
 
 .product-carousel::-webkit-scrollbar {
-    height: 8px;
+    display: none; /* Hide scrollbar for Chrome/Safari */
 }
 
-.product-carousel::-webkit-scrollbar-track {
-    background: var(--accent-light);
-    border-radius: 10px;
-}
-
-.product-carousel::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 10px;
+.product-carousel.active {
+    cursor: grabbing;
 }
 
 .product-carousel .product-card-single {
-    flex: 0 0 320px; /* Fixed width for each card so they don't shrink */
+    flex: 0 0 320px; 
     scroll-snap-align: start;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* Hide scrollbar on mobile devices for cleaner look but still allow smooth scrolling */
 @media screen and (max-width: 768px) {
-    .product-carousel {
-        scrollbar-width: none;
-    }
-    .product-carousel::-webkit-scrollbar {
-        display: none;
-    }
     .product-carousel .product-card-single {
         flex: 0 0 280px; 
     }
+    .carousel-wrapper {
+        padding: 0 20px;
+    }
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    .carousel-btn.left-btn {
+        left: -5px;
+    }
+    .carousel-btn.right-btn {
+        right: -5px;
+    }
 }
-
