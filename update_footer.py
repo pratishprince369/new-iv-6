@@ -21,7 +21,7 @@ new_footer_html = """    <!-- Footer -->
             <div class="footer-contact">
                 <div class="social-icons">
                     <a href="https://www.instagram.com/reviveivdrip_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61570785538852" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
                 <div class="contact-info">
