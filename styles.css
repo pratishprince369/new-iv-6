@@ -1919,31 +1919,28 @@ a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: white;
+    background: transparent;
     color: var(--primary);
     border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-weight: 300;
     cursor: pointer;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
+    padding: 10px;
 }
 .carousel-btn:hover {
-    background: var(--accent);
-    color: white;
-    box-shadow: 0 6px 20px rgba(0,147,148,0.3);
+    color: var(--accent);
+    transform: translateY(-50%) scale(1.1);
 }
 .carousel-btn.left-btn {
-    left: -10px;
+    left: -15px;
 }
 .carousel-btn.right-btn {
-    right: -10px;
+    right: -15px;
 }
 
 .product-carousel {
@@ -1951,16 +1948,18 @@ a {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
     margin-top: 30px;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none !important; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none !important; /* Hide scrollbar for IE/Edge */
     -webkit-overflow-scrolling: touch;
     cursor: grab;
 }
 
 .product-carousel::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
+    display: none !important; /* Hide scrollbar for Chrome/Safari */
+    width: 0 !important;
+    height: 0 !important;
 }
 
 .product-carousel.active {
